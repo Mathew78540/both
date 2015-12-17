@@ -48,7 +48,7 @@
 		462A8C941C2008200058B429 /* TaskProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskProgress.swift; sourceTree = "<group>"; };
 		462A8C971C20148D0058B429 /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		4651681E1C1ECFB600576FA8 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		4672ED931C1ECB4B004546F1 /* both.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = both.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4672ED931C1ECB4B004546F1 /* Both.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Both.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4672ED961C1ECB4C004546F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = both/AppDelegate.swift; sourceTree = "<group>"; };
 		4672ED981C1ECB4C004546F1 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		4672ED9D1C1ECB4C004546F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		4672ED941C1ECB4B004546F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4672ED931C1ECB4B004546F1 /* both.app */,
+				4672ED931C1ECB4B004546F1 /* Both.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 			);
 			name = both;
 			productName = both;
-			productReference = 4672ED931C1ECB4B004546F1 /* both.app */;
+			productReference = 4672ED931C1ECB4B004546F1 /* Both.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -460,7 +460,7 @@
 				INFOPLIST_FILE = both/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.both.both;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Both;
 			};
 			name = Debug;
 		};
@@ -473,7 +473,7 @@
 				INFOPLIST_FILE = both/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.both.both;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Both;
 			};
 			name = Release;
 		};

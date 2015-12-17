@@ -11,6 +11,7 @@
         <mutableArray key="GothamRoundedBold.ttf">
             <string>GothamRoundedBold</string>
             <string>GothamRoundedBold</string>
+            <string>GothamRoundedBold</string>
         </mutableArray>
         <mutableArray key="GothamRoundedBook.ttf">
             <string>GothamRoundedBook</string>
@@ -46,7 +47,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="home_identifier" title="Home" id="BYZ-38-t0r" customClass="HomeController" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home_identifier" title="Home" id="BYZ-38-t0r" customClass="HomeController" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -143,7 +144,7 @@
         <!--Join Room-->
         <scene sceneID="WI6-Bm-7jl">
             <objects>
-                <viewController title="Join Room" id="4ED-CQ-ugB" customClass="JoinRoomController" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Join Room" id="4ED-CQ-ugB" customClass="JoinRoomController" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cZr-hg-bBn"/>
                         <viewControllerLayoutGuide type="bottom" id="kxB-4L-Gky"/>
@@ -280,7 +281,7 @@
         <!--Relations-->
         <scene sceneID="5HZ-FW-rY6">
             <objects>
-                <viewController id="O9U-cv-FRI" customClass="RelationsController" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="O9U-cv-FRI" customClass="RelationsController" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Iv-zh-B6P"/>
                         <viewControllerLayoutGuide type="bottom" id="jRu-Ks-1wF"/>
@@ -373,7 +374,7 @@
                                 <rect key="frame" x="0.0" y="351" width="320" height="168"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="category_stat_cell" rowHeight="148" id="sc3-9F-SqV" customClass="CategoryStatCell" customModule="both" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="category_stat_cell" rowHeight="148" id="sc3-9F-SqV" customClass="CategoryStatCell" customModule="Both" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="148"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sc3-9F-SqV" id="sTg-Wp-hqr">
@@ -585,7 +586,7 @@
         <!--Dashboard :)-->
         <scene sceneID="xav-0M-agb">
             <objects>
-                <viewController title="Dashboard :)" id="fVI-k2-90v" customClass="DashBoardController" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dashboard :)" id="fVI-k2-90v" customClass="DashBoardController" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pWc-4y-eu1"/>
                         <viewControllerLayoutGuide type="bottom" id="E37-9F-uyj"/>
@@ -598,7 +599,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="task_progress_cell" rowHeight="65" id="XzU-If-ad0" customClass="TaskProgressCell" customModule="both" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="task_progress_cell" rowHeight="65" id="XzU-If-ad0" customClass="TaskProgressCell" customModule="Both" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XzU-If-ad0" id="caE-Ha-gSU">
@@ -719,15 +720,25 @@
                                     <outlet property="delegate" destination="fVI-k2-90v" id="Jvt-mF-RL8"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Vous n'avez aucune tâche disponible." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VW4-tF-Y8Y">
+                                <rect key="frame" x="8" y="64" width="304" height="455"/>
+                                <fontDescription key="fontDescription" name="GothamRoundedBold" family="Gotham Rounded" pointSize="16"/>
+                                <color key="textColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="0me-P9-YhA" secondAttribute="trailing" id="6Xc-5k-ejh"/>
+                            <constraint firstItem="VW4-tF-Y8Y" firstAttribute="trailing" secondItem="4sc-lT-kAg" secondAttribute="trailingMargin" id="Er3-XM-yqh"/>
                             <constraint firstAttribute="bottom" secondItem="0me-P9-YhA" secondAttribute="bottom" id="Pl5-ox-jis"/>
                             <constraint firstItem="0me-P9-YhA" firstAttribute="top" secondItem="4sc-lT-kAg" secondAttribute="top" id="TWy-5w-jOh"/>
+                            <constraint firstItem="VW4-tF-Y8Y" firstAttribute="leading" secondItem="4sc-lT-kAg" secondAttribute="leadingMargin" id="U2Z-YX-aag"/>
+                            <constraint firstItem="VW4-tF-Y8Y" firstAttribute="top" secondItem="pWc-4y-eu1" secondAttribute="bottom" id="UE8-ei-GxG"/>
                             <constraint firstItem="0me-P9-YhA" firstAttribute="leading" secondItem="4sc-lT-kAg" secondAttribute="leading" id="W93-JM-5B4"/>
                             <constraint firstItem="0me-P9-YhA" firstAttribute="top" secondItem="pWc-4y-eu1" secondAttribute="bottom" id="afm-i6-X2D"/>
+                            <constraint firstItem="E37-9F-uyj" firstAttribute="top" secondItem="VW4-tF-Y8Y" secondAttribute="bottom" id="bVm-3C-QSN"/>
                             <constraint firstAttribute="bottomMargin" secondItem="0me-P9-YhA" secondAttribute="bottom" constant="5" id="efu-Du-3f1"/>
                             <constraint firstItem="0me-P9-YhA" firstAttribute="centerX" secondItem="4sc-lT-kAg" secondAttribute="centerX" id="hFi-n4-OGl"/>
                             <constraint firstItem="0me-P9-YhA" firstAttribute="leading" secondItem="4sc-lT-kAg" secondAttribute="leading" id="spI-wV-VWm"/>
@@ -753,6 +764,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="emptyTableView" destination="VW4-tF-Y8Y" id="MvH-Zs-oR5"/>
                         <outlet property="tasksTableView" destination="0me-P9-YhA" id="duK-pp-4WZ"/>
                     </connections>
                 </viewController>
@@ -764,7 +776,7 @@
         <!--Add a task-->
         <scene sceneID="THT-O8-bdS">
             <objects>
-                <viewController title="Add a task" id="uz1-6H-aad" customClass="AddNewTaskController" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add a task" id="uz1-6H-aad" customClass="AddNewTaskController" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="df2-7B-3gg"/>
                         <viewControllerLayoutGuide type="bottom" id="3s9-hn-2Ev"/>
@@ -878,7 +890,7 @@
         <!--Tab Bar-->
         <scene sceneID="VdF-6J-cIl">
             <objects>
-                <tabBarController storyboardIdentifier="dashboard_identifier" id="Qx5-D5-zxJ" customClass="TabBar" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="dashboard_identifier" id="Qx5-D5-zxJ" customClass="TabBar" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="76P-pK-Z0S">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -897,7 +909,7 @@
         <!--Create Room-->
         <scene sceneID="t0y-Mu-ONs">
             <objects>
-                <viewController title="Create Room" id="Q6E-uR-3ab" customClass="CreateRoomController" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Create Room" id="Q6E-uR-3ab" customClass="CreateRoomController" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="We5-i6-YgI"/>
                         <viewControllerLayoutGuide type="bottom" id="Bgw-SD-TUw"/>
@@ -1037,7 +1049,7 @@
         <!--Login-->
         <scene sceneID="Pjf-67-ze4">
             <objects>
-                <viewController title="Login" id="enG-IL-fW3" customClass="LoginController" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" id="enG-IL-fW3" customClass="LoginController" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lE2-H7-LLd"/>
                         <viewControllerLayoutGuide type="bottom" id="qXq-Vn-VW6"/>
@@ -1160,7 +1172,7 @@
         <!--Dashboard-->
         <scene sceneID="qZ7-9a-Mbs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pco-0J-W9q" customClass="NavigationBar" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pco-0J-W9q" customClass="NavigationBar" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard_icon" id="wfe-aC-3Jk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SDs-3y-upY">
@@ -1179,7 +1191,7 @@
         <!--Relations-->
         <scene sceneID="MCJ-V9-njW">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hys-zx-AeC" customClass="NavigationBar" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hys-zx-AeC" customClass="NavigationBar" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Relations" image="relation_icon" id="sfw-Wf-abj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vrz-S4-hfz">
@@ -1198,7 +1210,7 @@
         <!--Navigation Bar-->
         <scene sceneID="zcV-27-8NJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yg4-JF-j6E" customClass="NavigationBar" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yg4-JF-j6E" customClass="NavigationBar" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8mQ-hU-LRV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1216,7 +1228,7 @@
         <!--Navigation Bar-->
         <scene sceneID="yuZ-vy-fpk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KFw-T8-pBJ" customClass="NavigationBar" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KFw-T8-pBJ" customClass="NavigationBar" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vS8-P5-Tam">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1234,7 +1246,7 @@
         <!--Navigation Bar-->
         <scene sceneID="8cY-Ip-UQV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Msr-pp-n0G" customClass="NavigationBar" customModule="both" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Msr-pp-n0G" customClass="NavigationBar" customModule="Both" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lB6-Al-BFx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

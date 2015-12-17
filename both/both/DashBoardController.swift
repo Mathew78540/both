@@ -20,12 +20,15 @@ class DashBoardController: UIViewController, UITableViewDataSource {
     
     // MARK: Outlets
     @IBOutlet weak var tasksTableView: UITableView!
-    
+    @IBOutlet weak var emptyTableView: UILabel!
     
     // MARK: Override
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        emptyTableView.hidden = true
+        tasksTableView.hidden = true
         
         // Add Pull to refresh
         self.refreshControl = UIRefreshControl()
@@ -187,6 +190,16 @@ class DashBoardController: UIViewController, UITableViewDataSource {
     
     func refreshTableViewFromApi() {
         Api.getTasksForDashboard { (result) -> () in
+            
+            if(result.count == 0){
+                self.emptyTableView.hidden = false
+                self.tasksTableView.hidden = true
+            }
+            
+            if(result.count > 0){
+                self.tasksTableView.hidden = false
+                self.emptyTableView.hidden = true
+            }
             
             self.allTasksProgress.removeAll()
             self.allTasksProgress+=result
