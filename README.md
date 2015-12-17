@@ -7,7 +7,3 @@ Swift application
 | Name  |  Role|
 | ------------- | ------------- |
 | Mathieu LE TYRANT  | Developer |
-
-#### Languages :
-
-- IOS : Swift
