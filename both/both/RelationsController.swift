@@ -86,8 +86,14 @@ class RelationsController: UIViewController, UITableViewDataSource {
         
         let yesButton = UIAlertAction(title: "Oui", style: .Destructive) { (action) in
             LocalStorage.cleanLocal()
+            
+            
             // TODO : CALL API
-            print("I break up with you beatch")
+            
+            // Redirect to the home
+            if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("home_identifier") {
+                UIApplication.sharedApplication().keyWindow?.rootViewController = viewController
+            }
         }
         
         let noButton  = UIAlertAction(title: "Non", style: .Default) { (action) in }
