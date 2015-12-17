@@ -80,7 +80,7 @@ class RelationsController: UIViewController, UITableViewDataSource {
         
         let alertController = UIAlertController(
             title   : "Rupture",
-            message : "Etes-vous sûr de vouloir rompre ?",
+            message : "Etes-vous sûr de vouloir rompre ? Votre relation sera définitivement supprimée",
             preferredStyle: .Alert
         )
         
