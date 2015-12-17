@@ -827,13 +827,6 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.18823529410000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="s5m-Ys-F5S">
-                                <rect key="frame" x="29" y="469" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="J10-UT-AQE"/>
-                                    <constraint firstAttribute="width" constant="20" id="aLc-ZZ-Yqh"/>
-                                </constraints>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rZ-88-5ou">
                                 <rect key="frame" x="20" y="457" width="280" height="44"/>
                                 <color key="backgroundColor" red="0.25882352941176467" green="0.27058823529411763" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
@@ -853,6 +846,13 @@
                                     <action selector="btnAddTask:" destination="uz1-6H-aad" eventType="touchUpInside" id="dqJ-qB-H6a"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="s5m-Ys-F5S">
+                                <rect key="frame" x="29" y="469" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="J10-UT-AQE"/>
+                                    <constraint firstAttribute="width" constant="20" id="aLc-ZZ-Yqh"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1096,13 +1096,6 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.18823529410000001" blue="0.3803921569" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="eCs-N1-u2b">
-                                <rect key="frame" x="29" y="516" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="Bgh-ug-0as"/>
-                                    <constraint firstAttribute="height" constant="20" id="p7S-nc-0wi"/>
-                                </constraints>
-                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAq-kq-tC7">
                                 <rect key="frame" x="20" y="504" width="280" height="44"/>
                                 <color key="backgroundColor" red="0.25882352941176467" green="0.27058823529411763" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
@@ -1124,6 +1117,13 @@
                                     <action selector="validateForm:" destination="enG-IL-fW3" eventType="touchUpInside" id="slM-CW-xEY"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="eCs-N1-u2b">
+                                <rect key="frame" x="29" y="516" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Bgh-ug-0as"/>
+                                    <constraint firstAttribute="height" constant="20" id="p7S-nc-0wi"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
