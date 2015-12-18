@@ -223,7 +223,7 @@
                                 </constraints>
                             </activityIndicatorView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="drS-KN-vQN">
-                                <rect key="frame" x="20" y="183" width="280" height="40"/>
+                                <rect key="frame" x="20" y="183" width="280" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="wx2-Lo-Crp"/>
                                 </constraints>
@@ -1275,7 +1275,7 @@
         <image name="relation_icon" width="30" height="28"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wuD-KD-fQd"/>
+        <segue reference="hQk-Ef-ath"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.92156862750000001" green="0.050980392159999999" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

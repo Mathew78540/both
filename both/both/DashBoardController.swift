@@ -171,10 +171,12 @@ class DashBoardController: UIViewController, UITableViewDataSource {
                 
                 let yesButton = UIAlertAction(title: "J'accepte", style: .Default) { (action) in
                     Api.deleteSorry(1)
+                    self.refreshTableViewFromApi()
                 }
                 
                 let noButton  = UIAlertAction(title: "Je décline", style: .Default) { (action) in
                     Api.deleteSorry(0)
+                    self.refreshTableViewFromApi()
                 }
                 
                 alertController.addAction(noButton)
