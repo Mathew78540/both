@@ -13,7 +13,10 @@ import Alamofire
 struct Api {
     
     static let baseUrl = Config.apiURL
-    static let headers = ["token": LocalStorage.getToken()!]
+    static let headers = [
+        "token"     : LocalStorage.getToken()!,
+        "language"  : NSLocale.preferredLanguages()[0]
+    ]
     
     // MARK: Login
     static func login(email:String, password:String, callback: (JSON) -> ()){
@@ -25,7 +28,7 @@ struct Api {
         
         let urlAPI = NSURL(string: Api.baseUrl + "login/");
         
-        Alamofire.request(.POST, urlAPI!, parameters: parameters, encoding: .JSON)
+        Alamofire.request(.POST, urlAPI!, parameters: parameters, encoding: .JSON, headers: Api.headers)
             .responseJSON { (response) -> Void in
                 if((response.result.value) != nil){
                     callback(JSON(response.result.value!))
@@ -53,7 +56,7 @@ struct Api {
         
         let urlAPI = NSURL(string: Api.baseUrl + "create-room/");
         
-        Alamofire.request(.POST, urlAPI!, parameters: parameters, encoding: .JSON)
+        Alamofire.request(.POST, urlAPI!, parameters: parameters, encoding: .JSON, headers: Api.headers)
                  .responseJSON { (response) -> Void in
                     if((response.result.value) != nil){
                         callback(JSON(response.result.value!))
