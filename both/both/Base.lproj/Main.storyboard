@@ -637,9 +637,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FSp-d3-TSS">
-                                <rect key="frame" x="20" y="218" width="280" height="101"/>
+                                <rect key="frame" x="20" y="218" width="280" height="133"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="101" id="Dw1-rX-SeX"/>
+                                    <constraint firstAttribute="height" constant="133" id="Dw1-rX-SeX"/>
                                     <constraint firstAttribute="height" constant="135" id="yvX-PX-x1o"/>
                                 </constraints>
                                 <variation key="default">

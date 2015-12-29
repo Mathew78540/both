@@ -27,7 +27,13 @@ struct Api {
         
         Alamofire.request(.POST, urlAPI!, parameters: parameters, encoding: .JSON)
             .responseJSON { (response) -> Void in
-                callback(JSON(response.result.value!))
+                if((response.result.value) != nil){
+                    callback(JSON(response.result.value!))
+                } else {
+                    callback(JSON([
+                        "status_code" : 500
+                    ]))
+                }
         }
         
     }
@@ -49,7 +55,13 @@ struct Api {
         
         Alamofire.request(.POST, urlAPI!, parameters: parameters, encoding: .JSON)
                  .responseJSON { (response) -> Void in
-                    callback(JSON(response.result.value!))
+                    if((response.result.value) != nil){
+                        callback(JSON(response.result.value!))
+                    } else {
+                        callback(JSON([
+                            "status_code" : 500
+                        ]))
+                    }
                     
         }
         

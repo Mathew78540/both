@@ -89,7 +89,7 @@ class CreateRoomController: UIViewController {
                 self.performSegueWithIdentifier("create_to_home", sender: nil)
                 
             }
-            else {
+            else if(result["status_code"] == 404){
                 var errorMessage:String = ""
                 
                 for obj in result["errors"] {
@@ -98,6 +98,9 @@ class CreateRoomController: UIViewController {
                 
                 
                 Alert.display(self, title: "Erreur", message: errorMessage)
+            }
+            else {
+                Alert.display(self, title: "Erreur", message: "L'API de Both semble hors ligne. Merci de réessayer.")
             }
             
             
