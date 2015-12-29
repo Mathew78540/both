@@ -14,8 +14,7 @@ struct Api {
     
     static let baseUrl = Config.apiURL
     static let headers = [
-        "token"     : LocalStorage.getToken()!,
-        "language"  : NSLocale.preferredLanguages()[0]
+        "token"     : LocalStorage.getToken()!
     ]
     
     // MARK: Login
@@ -28,7 +27,7 @@ struct Api {
         
         let urlAPI = NSURL(string: Api.baseUrl + "login/");
         
-        Alamofire.request(.POST, urlAPI!, parameters: parameters, encoding: .JSON, headers: Api.headers)
+        Alamofire.request(.POST, urlAPI!, parameters: parameters, encoding: .JSON)
             .responseJSON { (response) -> Void in
                 if((response.result.value) != nil){
                     callback(JSON(response.result.value!))
@@ -56,7 +55,7 @@ struct Api {
         
         let urlAPI = NSURL(string: Api.baseUrl + "create-room/");
         
-        Alamofire.request(.POST, urlAPI!, parameters: parameters, encoding: .JSON, headers: Api.headers)
+        Alamofire.request(.POST, urlAPI!, parameters: parameters, encoding: .JSON)
                  .responseJSON { (response) -> Void in
                     if((response.result.value) != nil){
                         callback(JSON(response.result.value!))

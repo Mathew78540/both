@@ -20,7 +20,6 @@ class RelationsController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var imageViewMe: UIImageView!
     @IBOutlet weak var imageViewPartner: UIImageView!
     @IBOutlet weak var labelMeAndPartnerName: UILabel!
-    @IBOutlet weak var labelGlobalRelation: UIImageView!
     @IBOutlet weak var categoriesTableView: UITableView!
     
     
@@ -142,8 +141,8 @@ class RelationsController: UIViewController, UITableViewDataSource {
     //MARK: Privates methods
     func getProfilesInformation(){
         
-        let meAvatar        = UIImage(data: NSData(contentsOfURL: NSURL(string:"http://vignette2.wikia.nocookie.net/jamescameronstitanic/images/e/ef/Untitledhgkjljlklk.png/revision/latest?cb=20130918131812")!)!)!
-        let partnerAvatar   = UIImage(data: NSData(contentsOfURL: NSURL(string:"https://s-media-cache-ak0.pinimg.com/736x/bf/9e/82/bf9e827c78c10f100ebcae0afcdc6f01.jpg")!)!)!
+        let meAvatar        = UIImage(data: NSData(contentsOfURL: NSURL(string:"https://assets.peerstreet.com/assets/default_avatar-886fa1c653f484f00f53dff216dbfd016234e1b16c99203f727392aa2f3dd42b.png")!)!)!
+        let partnerAvatar   = UIImage(data: NSData(contentsOfURL: NSURL(string:"https://assets.peerstreet.com/assets/default_avatar-886fa1c653f484f00f53dff216dbfd016234e1b16c99203f727392aa2f3dd42b.png")!)!)!
         
         // Add avatar circle
         self.imageViewMe.image       = meAvatar.circle
@@ -153,11 +152,8 @@ class RelationsController: UIViewController, UITableViewDataSource {
         borderCercle(self.imageViewMe, border: 5.0)
         borderCercle(self.imageViewPartner, border: 5.0)
         
-        self.labelGlobalRelation.image = UIImage(named: "bad_relation")
-        
-        
         Api.getProfiles { (result) -> () in
-            self.labelMeAndPartnerName.text = "\(result["me"]["username"]) & \(result["partner"]["username"])"
+            self.labelMeAndPartnerName.text = "\(result["me"]["name"]) & \(result["partner"]["name"])"
         }
         
     }

@@ -17,7 +17,6 @@ class DashBoardController: UIViewController, UITableViewDataSource {
     // Pull to Refresh
     var refreshControl:UIRefreshControl!
     
-    
     // MARK: Outlets
     @IBOutlet weak var tasksTableView: UITableView!
     @IBOutlet weak var emptyTableView: UILabel!

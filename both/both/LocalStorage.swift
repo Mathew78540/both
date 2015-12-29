@@ -42,11 +42,7 @@ struct LocalStorage {
     }
     
     static func getToken() -> String? {
-        if(userDefault.stringForKey("roomToken") != nil){
-            return userDefault.stringForKey("roomToken")
-        }
-        
-        return ""
+        return userDefault.stringForKey("roomToken")
     }
     
     static func getConnected() -> Int? {
