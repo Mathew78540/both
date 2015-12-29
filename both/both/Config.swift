@@ -11,7 +11,7 @@ import UIKit
 class Config {
         
     // API URL
-    static let apiURL:String = "http://zerobin.mathieuletyrant.com/api/"
+    static let apiURL:String = "http://localhost:8000/api/"
     
     // Background color navigationBar
     static let backgroundColorNavBar:String = "EF3061"

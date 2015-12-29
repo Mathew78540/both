@@ -13,8 +13,9 @@ class LoginController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var labelUsername: UITextField!
+    @IBOutlet weak var labelEmail: UITextField!
     @IBOutlet weak var labelPassword: UITextField!
+    
     @IBOutlet weak var labelBtnLogin: UIButton!
     @IBOutlet weak var activityLogin: UIActivityIndicatorView!
     
@@ -22,7 +23,7 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         
         // Add border-bottom
-        borderBottom(labelUsername)
+        borderBottom(labelEmail)
         borderBottom(labelPassword)
         
         // Hide activity
@@ -44,41 +45,40 @@ class LoginController: UIViewController {
 
     @IBAction func validateForm(sender: UIButton) {
         
-        if(labelUsername.text != "" && labelPassword.text != ""){
+        if (labelEmail.text!.isEmpty || labelPassword.text!.isEmpty){
+            Alert.display(self, title: "Erreur", message: "Merci de remplir tous les champs")
+            return
+        }
+        
+        self.activityLogin.hidden = false
+        
+        // Try to create the user and the room
+        Api.login(labelEmail.text!, password: labelPassword.text!, callback: { (result) -> () in
             
             self.activityLogin.hidden = false
             
-            // Try to create the user and the room
-            Api.login(labelUsername.text!, password: labelPassword.text!, callback: { (result) -> () in
+            // Success Creation
+            if(result["status_code"] == 200){
                 
-                self.activityLogin.hidden = false
+                LocalStorage.setUserID(result["me"]["id"].int!)
+                LocalStorage.setPartnerUserID(result["partner"]["id"].int!)
+                LocalStorage.setRoomToken(result["room"]["token"].string!)
+                LocalStorage.setConnected()
                 
-                // Success Creation
-                if(result["status_code"] == 200){
-                    LocalStorage.setUserID(result["me"]["id"].int!)
-                    LocalStorage.setPartnerUserID(result["partner"]["id"].int!)
-                    LocalStorage.setRoomToken(result["room"]["token"].string!)
-                    LocalStorage.setConnected()
-                    
-                    // Hide keyboard
-                    self.view.endEditing(true)
-                    
-                    // Go to the dashboard
-                    if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("dashboard_identifier") {
-                        UIApplication.sharedApplication().keyWindow?.rootViewController = viewController
-                    }
-                    
-                } else {
-                    Alert.display(self, title: "Erreur", message: result["errors"].string!)
+                // Hide keyboard
+                self.view.endEditing(true)
+                
+                // Go to the dashboard
+                if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("dashboard_identifier") {
+                    UIApplication.sharedApplication().keyWindow?.rootViewController = viewController
                 }
                 
-                
-            });
+            } else {
+                // Display errors
+            }
             
-        } else {
             
-            Alert.display(self, title: "Erreur", message: "Merci de remplir tous les champs")
-        }
+        });
         
     }
     

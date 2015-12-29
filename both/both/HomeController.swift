@@ -23,6 +23,8 @@ class HomeController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
+        LocalStorage.cleanLocal()
+        
         if let connected = LocalStorage.getConnected(){
             if (connected == 1) {
                 if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("dashboard_identifier") {

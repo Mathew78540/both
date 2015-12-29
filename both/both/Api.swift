@@ -16,11 +16,11 @@ struct Api {
     static let headers = ["token": LocalStorage.getToken()!]
     
     // MARK: Login
-    static func login(username:String, password:String, callback: (JSON) -> ()){
+    static func login(email:String, password:String, callback: (JSON) -> ()){
         
         let parameters = [
-            "username": username,
-            "password": password
+            "user_email"     : email,
+            "user_password"  : password
         ]
         
         let urlAPI = NSURL(string: Api.baseUrl + "login/");
@@ -34,13 +34,15 @@ struct Api {
     
     
     // MARK: Create a room
-    static func createRoom(userUsername:String, userEmail:String, userPassword:String, partnerEmail:String, callback: (JSON) -> ()){
+    static func createRoom(userName:String, userEmail:String, userPassword:String, partnerName:String, partnerEmail:String, partnerPassword:String, callback: (JSON) -> ()){
         
         let parameters = [
-            "user_username" : userUsername,
-            "user_email"    : userEmail,
-            "user_password" : userPassword,
-            "partner_email" : partnerEmail
+            "user_name"         : userName,
+            "user_email"        : userEmail,
+            "user_password"     : userPassword,
+            "partner_name"      : partnerName,
+            "partner_email"     : partnerEmail,
+            "partner_password"  : partnerPassword
         ]
         
         let urlAPI = NSURL(string: Api.baseUrl + "create-room/");
@@ -49,27 +51,6 @@ struct Api {
                  .responseJSON { (response) -> Void in
                     callback(JSON(response.result.value!))
                     
-        }
-        
-    }
-    
-    
-    // MARK: Join room
-    static func joinRoom(userUsername:String, userEmail:String, userPassword:String, partnerEmail:String, callback: (JSON) -> ()){
-        
-        let parameters = [
-            "user_username" : userUsername,
-            "user_email"    : userEmail,
-            "user_password" : userPassword,
-            "partner_email" : partnerEmail
-        ]
-        
-        let urlAPI = NSURL(string: Api.baseUrl + "join-room/");
-        
-        Alamofire.request(.POST, urlAPI!, parameters: parameters, encoding: .JSON)
-            .responseJSON { (response) -> Void in
-                callback(JSON(response.result.value!))
-                
         }
         
     }

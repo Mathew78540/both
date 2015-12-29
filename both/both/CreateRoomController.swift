@@ -14,10 +14,14 @@ class CreateRoomController: UIViewController {
     
     // MARK: Outlets
     
-    @IBOutlet weak var labelUserUsername: UITextField!
+    @IBOutlet weak var labelUserName: UITextField!
     @IBOutlet weak var labelUserEmail: UITextField!
     @IBOutlet weak var labelUserPassword: UITextField!
+    
+    @IBOutlet weak var labelPartnerName: UITextField!
     @IBOutlet weak var labelPartnerEmail: UITextField!
+    @IBOutlet weak var labelPartnerPassword: UITextField!
+    
     @IBOutlet weak var labelBtn: UIButton!
     @IBOutlet weak var activityCreate: UIActivityIndicatorView!
     
@@ -25,10 +29,13 @@ class CreateRoomController: UIViewController {
         super.viewDidLoad()
                 
         // Add border-bottom
-        borderBottom(labelUserUsername)
+        borderBottom(labelUserName)
         borderBottom(labelUserEmail)
         borderBottom(labelUserPassword)
+        
+        borderBottom(labelPartnerName)
         borderBottom(labelPartnerEmail)
+        borderBottom(labelPartnerPassword)
         
         // Hide activity
         activityCreate.hidden = true
@@ -48,41 +55,45 @@ class CreateRoomController: UIViewController {
     
     @IBAction func validateForm(sender: UIButton) {
         
-        if(labelUserUsername.text != "" && labelUserEmail.text != "" && labelUserPassword.text != "" && labelPartnerEmail.text != ""){
-            
-            activityCreate.hidden = false
-            
-            // Try to join a room create by the first user
-            Api.createRoom(labelUserUsername.text!, userEmail: labelUserEmail.text!, userPassword: labelUserPassword.text!, partnerEmail: labelPartnerEmail.text!, callback: { (result) -> () in
-                
-                self.activityCreate.hidden = true
-                
-                // Success join
-                if(result["status_code"] == 200){
-                    
-                    LocalStorage.setUserID(result["data"]["user_id"].int!)
-                    LocalStorage.setPartnerUserID(result["data"]["partner_id"].int!)
-                    LocalStorage.setRoomToken(result["data"]["token"].string!)
-                    LocalStorage.setConnected()
-                    
-                    // Hide keyboard
-                    self.view.endEditing(true)
-                    
-                    // Go to the dashboard
-                    if let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("dashboard_identifier") {
-                        UIApplication.sharedApplication().keyWindow?.rootViewController = viewController
-                    }
-                    
-                } else {
-                    // TODO : Display errors
-                }
-                
-                
-            });
-            
-        } else {
+        
+        // User must complete all fields
+        if(labelUserName.text!.isEmpty || labelUserEmail.text!.isEmpty || labelUserPassword.text!.isEmpty){
             Alert.display(self, title: "Erreur", message: "Merci de remplir tous les champs")
+            return
         }
+        
+        if(labelPartnerName.text!.isEmpty || labelPartnerEmail.text!.isEmpty || labelPartnerPassword.text!.isEmpty){
+            Alert.display(self, title: "Erreur", message: "Merci de remplir tous les champs")
+            return
+        }
+        
+        
+        // Display the activity
+        activityCreate.hidden = false
+        
+        // Try to join a room create by the first user
+        Api.createRoom(labelUserName.text!, userEmail: labelUserEmail.text!, userPassword: labelUserPassword.text!, partnerName: labelPartnerName.text!, partnerEmail: labelPartnerEmail.text!, partnerPassword: labelPartnerPassword.text!, callback: { (result) -> () in
+            
+            self.activityCreate.hidden = true
+            
+            // Success join
+            if(result["status_code"] == 200){
+                
+                // Hide keyboard
+                self.view.endEditing(true)
+                
+                // Display success alert
+                Alert.display(self, title: "Succès", message: result["success"].string!)
+                
+                // Redirect to the home
+                self.performSegueWithIdentifier("create_to_home", sender: nil)
+                
+            } else {
+                print(result["errors"])
+            }
+            
+            
+        });
         
     }
     
