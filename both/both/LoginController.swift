@@ -60,9 +60,11 @@ class LoginController: UIViewController {
             // Success Creation
             if(result["status_code"] == 200){
                 
-                LocalStorage.setUserID(result["me"]["id"].int!)
-                LocalStorage.setPartnerUserID(result["partner"]["id"].int!)
-                LocalStorage.setRoomToken(result["room"]["token"].string!)
+                
+                
+                LocalStorage.setUserID(result["data"]["me"]["id"].int!)
+                LocalStorage.setPartnerUserID(result["data"]["partner"]["id"].int!)
+                LocalStorage.setRoomToken(result["data"]["room"]["token"].string!)
                 LocalStorage.setConnected()
                 
                 // Hide keyboard

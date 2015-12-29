@@ -76,7 +76,7 @@ struct Api {
     // MARK: Get all categories
     static func getCategories(callback: (categories:[Category]) -> ()) {
         
-        let urlAPI = NSURL(string: "\(Api.baseUrl)all-categories/");
+        let urlAPI = NSURL(string: "\(Api.baseUrl)categories/");
         
         Alamofire.request(.GET, urlAPI!, parameters: nil, encoding: .JSON, headers: Api.headers)
             .responseJSON { (response) -> Void in
