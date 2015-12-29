@@ -55,12 +55,10 @@ class LoginController: UIViewController {
         // Try to create the user and the room
         Api.login(labelEmail.text!, password: labelPassword.text!, callback: { (result) -> () in
             
-            self.activityLogin.hidden = false
+            self.activityLogin.hidden = true
             
             // Success Creation
             if(result["status_code"] == 200){
-                
-                
                 
                 LocalStorage.setUserID(result["data"]["me"]["id"].int!)
                 LocalStorage.setPartnerUserID(result["data"]["partner"]["id"].int!)
@@ -75,8 +73,15 @@ class LoginController: UIViewController {
                     UIApplication.sharedApplication().keyWindow?.rootViewController = viewController
                 }
                 
-            } else {
-                // Display errors
+            }
+            else {
+                var errorMessage:String = ""
+                
+                for obj in result["errors"] {
+                    errorMessage += "\(obj.1.stringValue) \n"
+                }
+                
+                Alert.display(self, title: "Erreur", message: errorMessage)
             }
             
             

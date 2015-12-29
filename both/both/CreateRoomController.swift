@@ -88,8 +88,16 @@ class CreateRoomController: UIViewController {
                 // Redirect to the home
                 self.performSegueWithIdentifier("create_to_home", sender: nil)
                 
-            } else {
-                print(result["errors"])
+            }
+            else {
+                var errorMessage:String = ""
+                
+                for obj in result["errors"] {
+                    errorMessage += "\(obj.1.stringValue) \n"
+                }
+                
+                
+                Alert.display(self, title: "Erreur", message: errorMessage)
             }
             
             
