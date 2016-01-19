@@ -13,4 +13,4 @@ manière ludique et originale avec votre
 
 #### Preview :
 
-![Both](https://raw.githubusercontent.com/Mathew78540/both/master/Preview/Log%20screen.png)
+![Both](https://raw.githubusercontent.com/Mathew78540/both/master/Preview/Log%20screen.png | width=100)
