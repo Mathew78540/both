@@ -31,3 +31,9 @@ DerivedData
 # Carthage/Checkouts
 
 Carthage/Build
+
+# JS
+node_modules/
+
+# PHP
+vendor/

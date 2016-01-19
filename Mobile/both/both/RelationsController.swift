@@ -141,8 +141,10 @@ class RelationsController: UIViewController, UITableViewDataSource {
     //MARK: Privates methods
     func getProfilesInformation(){
         
-        let meAvatar        = UIImage(data: NSData(contentsOfURL: NSURL(string:"https://assets.peerstreet.com/assets/default_avatar-886fa1c653f484f00f53dff216dbfd016234e1b16c99203f727392aa2f3dd42b.png")!)!)!
-        let partnerAvatar   = UIImage(data: NSData(contentsOfURL: NSURL(string:"https://assets.peerstreet.com/assets/default_avatar-886fa1c653f484f00f53dff216dbfd016234e1b16c99203f727392aa2f3dd42b.png")!)!)!
+        let defaultAvatarLink = "https://assets.peerstreet.com/assets/default_avatar-886fa1c653f484f00f53dff216dbfd016234e1b16c99203f727392aa2f3dd42b.png"
+        
+        let meAvatar        = UIImage(data: NSData(contentsOfURL: NSURL(string: defaultAvatarLink)!)!)!
+        let partnerAvatar   = UIImage(data: NSData(contentsOfURL: NSURL(string: defaultAvatarLink)!)!)!
         
         // Add avatar circle
         self.imageViewMe.image       = meAvatar.circle
