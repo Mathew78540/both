@@ -10,7 +10,3 @@ manière ludique et originale avec votre
 * Mobile : Swift
   * Alamofire
   * SwiftyJson
-
-#### Preview :
-
-![Both](https://raw.githubusercontent.com/Mathew78540/both/master/Preview/Log%20screen.png | width=100)
